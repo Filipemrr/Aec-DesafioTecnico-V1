@@ -67,8 +67,8 @@ function Home() {
       >
         {/* Primeiro Item (metade da largura) */}
         {!isSmallScreen && (
-          <Grid item xs={12} md={6}>
-            <p>dsadasdsadsadsad</p>
+          <Grid item xs={12} md={6} className={"aec-logo"}>
+            <img src="/logo.png" alt="Logo AeC" />
           </Grid>
         )
         }

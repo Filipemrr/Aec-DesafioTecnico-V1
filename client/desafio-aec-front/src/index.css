@@ -26,3 +26,9 @@ code {
   color: black;
   bottom: 0;
 }
+
+.aec-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
