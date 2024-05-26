@@ -1,41 +1,25 @@
 import React, { useState } from 'react';
-import {
-  Button,
-  Dialog,
-  DialogTitle,
-  DialogContent,
-  DialogActions,
-  Slide,
-  TextField,
-  Snackbar,
-  Alert
-} from "@mui/material";
+import { Dialog, DialogTitle, DialogContent, TextField, DialogActions, Button, Snackbar, Alert, IconButton, InputAdornment } from '@mui/material';
 import PersonIcon from '@mui/icons-material/Person';
-import EmailIcon from '@mui/icons-material/Email';
-import LockIcon from '@mui/icons-material/Lock';
-import axios from 'axios'
-import {API_URL} from '../../App';
-import AddCircleIcon from '@mui/icons-material/AddCircle';
-import DownloadRoundedIcon from '@mui/icons-material/DownloadRounded';
-
-
+import SearchIcon from '@mui/icons-material/Search';
+import axios from 'axios';
+import { API_URL } from '../../App';
 
 const NewAddressDialog = () => {
   const [open, setOpen] = useState(false);
   const [formData, setFormData] = useState({
-    nome: '',
-    email: '',
-    senha: '',
-    confirmarSenha: '',
+    cep: '',
+    logradouro: '',
+    complemento: '',
+    bairro: '',
+    cidade: '',
+    uf: '',
+    numero: ''
   });
-
-
   const [errorSnackbar, setErrorSnackbar] = useState(false);
-  const [errorSnackbarIdade, setErrorSnackbarIdade] = useState(false);
-  const [passwordMatchErrorSnackbar, setPasswordMatchErrorSnackbar] = useState(false);
   const [confirmationSnackbar, setConfirmationSnackbar] = useState(false);
-  const [error, setError] = useState(false)
-  const [message,setMessage] = useState('')
+  const [error, setError] = useState(false);
+  const [message, setMessage] = useState('');
 
   const handleOpen = () => {
     setOpen(true);
@@ -44,11 +28,15 @@ const NewAddressDialog = () => {
   const handleClose = () => {
     setOpen(false);
     setFormData({
-      nome: '',
-      email: '',
-      senha: '',
-      confirmarSenha: '',
-    })
+      cep: '',
+      logradouro: '',
+      complemento: '',
+      bairro: '',
+      cidade: '',
+      uf: '',
+      numero: ''
+    });
+    window.location.reload();
   };
 
   const handleChange = (e) => {
@@ -58,130 +46,114 @@ const NewAddressDialog = () => {
     });
   };
 
-  const handleSubmit = () => {
-    if (
-      formData.nome.trim() === '' ||
-      formData.email.trim() === '' ||
-      formData.senha.trim() === '' ||
-      formData.confirmarSenha.trim() === ''
-    ) {
+  const fetchCEPData = async () => {
+    let { cep } = formData;
+    cep = cep.replace(/\D/g, '');
+    if (cep.length !== 8) {
+      setMessage('CEP inválido');
+      setError(true);
+      return;
+    }
+    const url = `https://viacep.com.br/ws/${cep}/json/`;
+    try {
+      const response = await axios.get(url);
+      const data = response.data;
+
+      setFormData((prevData) => ({
+        ...prevData,
+        logradouro: data.logradouro || '',
+        complemento: data.complemento || '',
+        bairro: data.bairro || '',
+        cidade: data.localidade || '',
+        uf: data.uf || '',
+      }));
+    } catch (err) {
+      setMessage('Erro ao buscar dados do CEP');
+      setError(true);
+    }
+  };
+
+  const handleSubmit = async () => {
+    const { cep, logradouro, complemento, bairro, cidade, uf, numero } = formData;
+
+    if (!cep || !logradouro || !bairro || !cidade || !uf || !numero) {
       setErrorSnackbar(true);
       return;
     }
 
-    if (formData.senha !== formData.confirmarSenha) {
-      setPasswordMatchErrorSnackbar(true);
-      return;
-    }
-    // Adicione lógica de envio ou validação aqui
-    const url = `${API_URL}/users/createUser`
-
-    const headers = {
+    const url = `${API_URL}/address/novoEndereco`;
+    const data = { cep, logradouro, complemento, bairro, cidade, uf, numero };
+    const config = {
       headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${localStorage.getItem('token')}`
       }
-    }
-    const data = {
-      email : formData.email,
-      name : formData.nome,
-      password : formData.senha
-    }
-    console.log(data);
+    };
 
-    axios.post(url,data,headers)
-      .then((response) =>{
-        console.log(url, data, headers);
-        if (response.status == 200) {
-          setConfirmationSnackbar(true);
-          console.log(response.data);
-          handleClose();
-        }
-      })
-      .catch((error) => {
-        console.log(error)
-        setMessage(error.response.data.message)
-        setError(true)
-      })
-
+    try {
+      const response = await axios.post(url, data, config);
+      if (response.status === 200) {
+        setConfirmationSnackbar(true);
+        handleClose();
+      }
+    } catch (error) {
+      setMessage(error.response?.data?.message || 'Erro ao realizar cadastro');
+      setError(true);
+    }
   };
 
   const handleSnackbarClose = () => {
     setErrorSnackbar(false);
-    setPasswordMatchErrorSnackbar(false);
     setConfirmationSnackbar(false);
-    setErrorSnackbarIdade(false)
-    setError(false)
+    setError(false);
   };
+
+  const fields = [
+    { label: 'CEP', name: 'cep', type: 'text', placeholder: '12345-678', icon: <PersonIcon color="action" /> },
+    { label: 'Logradouro', name: 'logradouro', type: 'text', placeholder: 'Rua Exemplo 1', icon: null },
+    { label: 'Complemento', name: 'complemento', type: 'text', placeholder: 'Apto 101', icon: null },
+    { label: 'Bairro', name: 'bairro', type: 'text', placeholder: 'Bairro 1', icon: null },
+    { label: 'Cidade', name: 'cidade', type: 'text', placeholder: 'Cidade Exemplo', icon: null },
+    { label: 'UF', name: 'uf', type: 'text', placeholder: 'SP', icon: null },
+    { label: 'Número', name: 'numero', type: 'text', placeholder: '123', icon: null },
+  ];
 
   return (
     <>
       <Button
         color="success"
-        startDecorator={<DownloadRoundedIcon />}
+        startDecorator={<PersonIcon />}
         onClick={handleOpen}
-        sx={{bgcolor: 'green', color: 'white', margin:'10px'}}
+        sx={{ bgcolor: 'green', color: 'white', margin: '10px' }}
       >
-       Adicionar Endereco
+        Adicionar Endereço
       </Button>
       <Dialog open={open} onClose={handleClose}>
-        <DialogTitle>Cadastro de Usuário</DialogTitle>
+        <DialogTitle>Cadastro de Endereço</DialogTitle>
         <DialogContent>
-          <TextField
-            label="Nome"
-            type="text"
-            name="nome"
-            value={formData.nome}
-            onChange={handleChange}
-            fullWidth
-            margin="normal"
-            InputProps={{
-              startAdornment: (
-                <PersonIcon color="action" />
-              ),
-            }}
-          />
-          <TextField
-            label="Email"
-            type="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-            fullWidth
-            margin="normal"
-            InputProps={{
-              startAdornment: (
-                <EmailIcon color="action" />
-              ),
-            }}
-          />
-          <TextField
-            label="Senha"
-            type="password"
-            name="senha"
-            value={formData.senha}
-            onChange={handleChange}
-            fullWidth
-            margin="normal"
-            InputProps={{
-              startAdornment: (
-                <LockIcon color="action" />
-              ),
-            }}
-          />
-          <TextField
-            label="Confirmar Senha"
-            type="password"
-            name="confirmarSenha"
-            value={formData.confirmarSenha}
-            onChange={handleChange}
-            fullWidth
-            margin="normal"
-            InputProps={{
-              startAdornment: (
-                <LockIcon color="action" />
-              ),
-            }}
-          />
+          {fields.map((field, index) => (
+            <TextField
+              key={field.name}
+              label={field.label}
+              type={field.type}
+              name={field.name}
+              value={formData[field.name]}
+              onChange={handleChange}
+              fullWidth
+              margin="normal"
+              placeholder={field.placeholder}
+              InputProps={{
+                startAdornment: field.icon,
+                endAdornment: field.name === 'cep' && (
+                  <InputAdornment position="end">
+                    <IconButton onClick={fetchCEPData}>
+                      <SearchIcon />
+                    </IconButton>
+                  </InputAdornment>
+                ),
+              }}
+            />
+          ))}
         </DialogContent>
         <DialogActions>
           <Button onClick={handleSubmit} color="primary" variant='contained'>
@@ -192,54 +164,18 @@ const NewAddressDialog = () => {
           </Button>
         </DialogActions>
       </Dialog>
-      <Snackbar open={errorSnackbarIdade} autoHideDuration={5000} onClose={handleSnackbarClose}>
-        <Alert
-          onClose={handleSnackbarClose}
-          severity="error"
-          variant="filled"
-          sx={{ width: '100%' }}
-        >
-          Idade Invalida!.
-        </Alert>
-      </Snackbar>
       <Snackbar open={errorSnackbar} autoHideDuration={5000} onClose={handleSnackbarClose}>
-        <Alert
-          onClose={handleSnackbarClose}
-          severity="error"
-          variant="filled"
-          sx={{ width: '100%' }}
-        >
+        <Alert onClose={handleSnackbarClose} severity="error" variant="filled" sx={{ width: '100%' }}>
           Todos os Campos devem ser preenchidos!
         </Alert>
       </Snackbar>
-      <Snackbar open={passwordMatchErrorSnackbar} autoHideDuration={5000} onClose={handleSnackbarClose}>
-        <Alert
-          onClose={handleSnackbarClose}
-          severity="error"
-          variant="filled"
-          sx={{ width: '100%' }}
-        >
-          Os Campos de senha devem coincidir!
-        </Alert>
-      </Snackbar>
       <Snackbar open={error} autoHideDuration={5000} onClose={handleSnackbarClose}>
-        <Alert
-          onClose={handleSnackbarClose}
-          severity="error"
-          variant="filled"
-          sx={{ width: '100%' }}
-        >
+        <Alert onClose={handleSnackbarClose} severity="error" variant="filled" sx={{ width: '100%' }}>
           {message}
         </Alert>
       </Snackbar>
-      <Snackbar open={confirmationSnackbar} autoHideDuration={5000} onClose={handleSnackbarClose} anchorOrigin={{vertical:'top', horizontal:'center'}}>
-        <Alert
-          onClose={handleSnackbarClose}
-          severity="success"
-          variant="filled"
-          sx={{ width: '100%' }}
-
-        >
+      <Snackbar open={confirmationSnackbar} autoHideDuration={5000} onClose={handleSnackbarClose} anchorOrigin={{ vertical: 'top', horizontal: 'center' }}>
+        <Alert onClose={handleSnackbarClose} severity="success" variant="filled" sx={{ width: '100%' }}>
           Cadastro realizado com sucesso!
         </Alert>
       </Snackbar>
