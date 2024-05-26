@@ -1,54 +1,74 @@
 import * as React from 'react';
 import Table from '@mui/joy/Table';
+import { useEffect, useState } from 'react';
+import { API_URL } from '../App';
+import axios from 'axios';
+import CircularProgress from '@mui/material/CircularProgress';
+import Box from '@mui/material/Box';
 
 export default function BasicTable() {
+  const [loading, setLoading] = useState(true);
+  const [tableData, setTableData] = useState([]);
+  const [openSnackbar, setOpenSnackbar] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
+
+  useEffect(() => {
+    fetchTableData();
+  }, []);
+
+  const fetchTableData = async () => {
+    const token = localStorage.getItem('token');
+    const url = `${API_URL}/address/buscarEnderecos`;
+    const config = {
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${token}`
+      }
+    };
+    try {
+      const response = await axios.get(url, config);
+      const { data } = response.data;
+      setTableData(data);
+      setLoading(false);
+      console.log(data[0].cep);
+    } catch (err) {
+      setErrorMessage('Erro ao buscar dados da tabela');
+      setOpenSnackbar(true);
+      setLoading(false);
+    }
+  };
+
+  if (loading) {
+    return (
+      <Box display="flex" justifyContent="center" alignItems="center" minHeight="100vh">
+        <CircularProgress />
+      </Box>
+    );
+  }
+
   return (
     <Table aria-label="basic table" className="Address-Table">
       <thead>
       <tr>
-        <th style={{ width: '40%' }}>Dessert (100g serving)</th>
-        <th>Calories</th>
-        <th>Fat&nbsp;(g)</th>
-        <th>Carbs&nbsp;(g)</th>
-        <th>Protein&nbsp;(g)</th>
+        <th style={{ width: '40%' }}>CEP</th>
+        <th>Logradouro</th>
+        <th>Complemento</th>
+        <th>Bairro</th>
+        <th>Cidade</th>
+        <th>UF</th>
       </tr>
       </thead>
       <tbody>
-      <tr>
-        <td>Frozen yoghurt</td>
-        <td>159</td>
-        <td>6</td>
-        <td>24</td>
-        <td>4</td>
-      </tr>
-      <tr>
-        <td>Ice cream sandwich</td>
-        <td>237</td>
-        <td>9</td>
-        <td>37</td>
-        <td>4.3</td>
-      </tr>
-      <tr>
-        <td>Eclair</td>
-        <td>262</td>
-        <td>16</td>
-        <td>24</td>
-        <td>6</td>
-      </tr>
-      <tr>
-        <td>Cupcake</td>
-        <td>305</td>
-        <td>3.7</td>
-        <td>67</td>
-        <td>4.3</td>
-      </tr>
-      <tr>
-        <td>Gingerbread</td>
-        <td>356</td>
-        <td>16</td>
-        <td>49</td>
-        <td>3.9</td>
-      </tr>
+      {tableData.map((row) => (
+        <tr key={row.id}>
+          <td>{row.cep}</td>
+          <td>{row.logradouro}</td>
+          <td>{row.complemento}</td>
+          <td>{row.bairro}</td>
+          <td>{row.cidade}</td>
+          <td>{row.uf}</td>
+        </tr>
+      ))}
       </tbody>
     </Table>
   );

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { CssVarsProvider } from '@mui/joy/styles';
 import CssBaseline from '@mui/joy/CssBaseline';
 import Box from '@mui/joy/Box';
@@ -8,6 +8,11 @@ import DownloadRoundedIcon from '@mui/icons-material/DownloadRounded';
 import '../index.css';
 import BasicTable from '../components/Table.js';
 export default function Dashboard() {
+  const [loading, setLoading] = useState(true);
+  function Carregando(loading) {
+    setLoading(!loading)
+  }
+
   return (
     <CssVarsProvider disableTransitionOnChange>
       <CssBaseline />
