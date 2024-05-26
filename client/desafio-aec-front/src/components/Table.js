@@ -45,9 +45,9 @@ export default function BasicTable() {
       </Box>
     );
   }
-
   return (
-    <Table aria-label="basic table" className="Address-Table">
+    <Table borderAxis="both">
+      <caption>Seus enderecos cadastrados </caption>
       <thead>
       <tr>
         <th style={{ width: '40%' }}>CEP</th>

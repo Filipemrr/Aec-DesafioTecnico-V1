@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
-import { CssVarsProvider } from '@mui/joy/styles';
-import CssBaseline from '@mui/joy/CssBaseline';
 import Box from '@mui/joy/Box';
 import Button from '@mui/joy/Button';
 import Typography from '@mui/joy/Typography';
 import DownloadRoundedIcon from '@mui/icons-material/DownloadRounded';
+import AddCircleIcon from '@mui/icons-material/AddCircle';
 import '../index.css';
 import BasicTable from '../components/Table.js';
+import NewAddressDialog from '../features/Address/CreateAddressDialog';
+import { Grid } from '@mui/material';
 export default function Dashboard() {
   const [loading, setLoading] = useState(true);
   function Carregando(loading) {
@@ -14,8 +15,7 @@ export default function Dashboard() {
   }
 
   return (
-    <CssVarsProvider disableTransitionOnChange>
-      <CssBaseline />
+    <Grid>
       <Box sx={{ display: 'flex', minHeight: '100dvh' }}>
         <Box
           component="main"
@@ -27,13 +27,17 @@ export default function Dashboard() {
             <Typography level="h2" component="h1">
               Endereço
             </Typography>
-            <Button
-              color="primary"
-              startDecorator={<DownloadRoundedIcon />}
-              size="sm"
-            >
-              Download CSV
-            </Button>
+            <Box>
+              <NewAddressDialog/>
+              <Button
+                color="primary"
+                startDecorator={<DownloadRoundedIcon />}
+                size="sm"
+                sx={{margin: '10px'}}
+              >
+                Download CSV
+              </Button>
+            </Box>
           </Box>
           <Box
           className='TableContent'
@@ -42,6 +46,6 @@ export default function Dashboard() {
           </Box>
         </Box>
       </Box>
-    </CssVarsProvider>
+    </Grid>
   );
 }
