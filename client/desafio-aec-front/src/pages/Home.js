@@ -8,6 +8,7 @@ import CadastroDialog from '../features/Login/CadastroDialog';
 import { useNavigate } from 'react-router';
 import axios from 'axios'
 import "../index.css"
+import { API_URL} from '../App';
 
 
 function Home() {
@@ -19,10 +20,10 @@ function Home() {
   const navigate = useNavigate()
 
   const handleLogin = () => {
-    // Lógica de login aqui, por exemplo, enviar os dados para um servidor
-    const url = `http://localhost:3000/users/login`
+
+    const url = `${API_URL}/users/login`
     const data = {
-      username: email,
+      email: email,
       password: password
     }
     const config = {
@@ -35,7 +36,7 @@ function Home() {
         const { statusCode, data } = response.data;
         if (statusCode === 200) {
           localStorage.setItem('token', data.token);
-          navigate('/meuperfil');
+          navigate('/dashboard');
         } else {
           setErrorMessage('Erro Interno, contate o adiministrador');
           setOpenSnackbar(true);
@@ -110,7 +111,7 @@ function Home() {
             onChange={(e) => setPassword(e.target.value)}
           />
            <CadastroDialog />
-          <Button variant="contained" color="primary" onClick={handleLogin} sx={{ bgcolor: '#0CA789', width: '25%' }}>
+          <Button variant="contained" color="primary" onClick={handleLogin} sx={{ bgcolor: '#00b2e2', width: '25%' }}>
             Entrar
           </Button>
           <Snackbar

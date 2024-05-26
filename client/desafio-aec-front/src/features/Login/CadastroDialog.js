@@ -15,6 +15,8 @@ import CakeIcon from '@mui/icons-material/Cake';
 import EmailIcon from '@mui/icons-material/Email';
 import LockIcon from '@mui/icons-material/Lock';
 import axios from 'axios'
+import {API_URL} from '../../App';
+
 
 
 const CadastroDialog = () => {
@@ -25,6 +27,7 @@ const CadastroDialog = () => {
         senha: '',
         confirmarSenha: '',
     });
+
 
     const [errorSnackbar, setErrorSnackbar] = useState(false);
     const [errorSnackbarIdade, setErrorSnackbarIdade] = useState(false);
@@ -66,14 +69,11 @@ const CadastroDialog = () => {
         }
 
         if (formData.senha !== formData.confirmarSenha) {
-            // Exibe Snackbar de erro
             setPasswordMatchErrorSnackbar(true);
             return;
         }
-
-
         // Adicione lógica de envio ou validação aqui
-        const url = `${URL}/login/createUser`
+        const url = `${API_URL}/users/createUser`
 
         const headers = {
             headers: {
@@ -82,16 +82,17 @@ const CadastroDialog = () => {
         }
         const data = {
             email : formData.email,
-            username : formData.nome,
+            name : formData.nome,
             password : formData.senha
         }
+        console.log(data);
 
         axios.post(url,data,headers)
           .then((response) =>{
+            console.log(url, data, headers);
               if (response.status == 200) {
-                  // Exibe Snackbar de confirmação
                   setConfirmationSnackbar(true);
-                  console.log(response.data.data)
+                  console.log(response.data);
                   handleClose();
               }
           })
@@ -101,9 +102,6 @@ const CadastroDialog = () => {
               setError(true)
           })
 
-
-        // Feche o modal após o envio bem-sucedido ou validação
-        // handleClose();
     };
 
     const handleSnackbarClose = () => {
@@ -116,7 +114,7 @@ const CadastroDialog = () => {
 
     return (
       <>
-          <Button onClick={handleOpen} color="primary" sx={{ paddingBottom: '10px' }}>
+          <Button onClick={handleOpen} color="primary" sx={{ paddingBottom: '10px', color: 'black' }}>
               Se Cadastre!
           </Button>
           <Dialog open={open} onClose={handleClose}>
