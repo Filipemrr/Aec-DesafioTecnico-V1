@@ -32,3 +32,39 @@ code {
   align-items: center;
   justify-content: center;
 }
+
+.MainContent {
+  padding: 20px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  height: 100vh;
+  gap: 8px;
+}
+
+.ContentBox {
+  display: flex;
+  margin-bottom: 8px;
+  gap: 8px;
+  flex-direction: column;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+/* Adjust for larger screens */
+@media (min-width: 600px) {
+  .MainContent {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  .ContentBox {
+    flex-direction: row;
+    align-items: center;
+  }
+  .Address-Table{
+    border: 0.5px solid black;
+  }
+}
