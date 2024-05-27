@@ -52,37 +52,39 @@ export default function BasicTable() {
 
   return (
     <>
-      <Table borderAxis="both">
-        <caption>Seus enderecos cadastrados </caption>
-        <thead>
-        <tr>
-          <th style={{ width: '40%' }}>CEP</th>
-          <th>Logradouro</th>
-          <th>Complemento</th>
-          <th>Bairro</th>
-          <th>Cidade</th>
-          <th>UF</th>
-        </tr>
-        </thead>
-        <tbody>
-        {tableData.map((row) => (
-          <tr key={row.id}>
-            <td>
-              <Grid sx={{display: 'flex', alignItems: 'center'}}>
-                <UpdateAddressDialog ActualRow={row} />
-                <DeleteAddressDialog ActualRow={row}  />
-                {row.cep}
-              </Grid>
-            </td>
-            <td>{row.logradouro}</td>
-            <td>{row.complemento}</td>
-            <td>{row.bairro}</td>
-            <td>{row.cidade}</td>
-            <td>{row.uf}</td>
+      <Box sx={{ maxHeight: '500px', overflowY: 'auto', marginBottom: 2 }}>
+        <Table borderAxis="both">
+          <caption>Seus endereços cadastrados</caption>
+          <thead>
+          <tr>
+            <th style={{ width: '40%' }}>CEP</th>
+            <th>Logradouro</th>
+            <th>Complemento</th>
+            <th>Bairro</th>
+            <th>Cidade</th>
+            <th>UF</th>
           </tr>
-        ))}
-        </tbody>
-      </Table>
+          </thead>
+          <tbody>
+          {tableData.map((row) => (
+            <tr key={row.id}>
+              <td>
+                <Grid sx={{ display: 'flex', alignItems: 'center' }}>
+                  <UpdateAddressDialog ActualRow={row} />
+                  <DeleteAddressDialog ActualRow={row} />
+                  {row.cep}
+                </Grid>
+              </td>
+              <td>{row.logradouro}</td>
+              <td>{row.complemento}</td>
+              <td>{row.bairro}</td>
+              <td>{row.cidade}</td>
+              <td>{row.uf}</td>
+            </tr>
+          ))}
+          </tbody>
+        </Table>
+      </Box>
       <Snackbar
         open={openSnackbar}
         autoHideDuration={6000}
