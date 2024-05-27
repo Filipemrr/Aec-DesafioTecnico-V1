@@ -15,7 +15,7 @@ function buildBarGraphic(labels, dataset) {
     labels,
     datasets: [
       {
-        label: 'Contagem de Cidades',
+        label: 'Contagem dos Estados',
         data: dataset,
         backgroundColor: [
           'rgba(255, 99, 132, 0.6)',    // SP

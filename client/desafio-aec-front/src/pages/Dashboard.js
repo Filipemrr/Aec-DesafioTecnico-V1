@@ -31,7 +31,6 @@ function Table()  {
     </Grid>
   )
 }
-
 function LeftDataRepresentation() {
   return (
     <Grid item md={5.9}
@@ -42,7 +41,6 @@ function LeftDataRepresentation() {
     </Grid>
   )
 }
-
 function RightDataRepresentation() {
   return (
     <Grid item md={5.9}
