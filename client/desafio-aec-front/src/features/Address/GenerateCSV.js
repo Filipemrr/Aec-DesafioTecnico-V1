@@ -33,26 +33,25 @@ const GenerateCSV = () => {
   function startCSVDownload(readyData) {
     const blob = new Blob([readyData], { type: 'application/csv' });
     const url = URL.createObjectURL(blob);
-
-    document.getElementById('btn').addEventListener('click', () => {
       const a = document.createElement('a');
-      a.download = 'users.csv';
+      a.download = 'aec-address.csv';
       a.href = url;
       a.style.display = 'none';
       document.body.appendChild(a);
       a.click();
       a.remove();
       URL.revokeObjectURL(url);
-    });
+      window.location.reload();
   }
 
   return (
     <>
       <Button
         variant="contained"
+        color="primary"
         startIcon={<UploadIcon />}
         onClick={fetchData}
-        sx={{ bgcolor: '#5bda70', margin: '10px', '&:hover': { bgcolor: '#50c864' } }}
+        sx={{margin: '10px'}}
         id="btn"
       >
         Gerar CSV
