@@ -6,7 +6,6 @@ import axios from 'axios';
 import CircularProgress from '@mui/material/CircularProgress';
 import Box from '@mui/material/Box';
 import Snackbar from '@mui/material/Snackbar';
-import UpdateAndDeleteDialog from '../features/Address/UpdateAddressDialog';
 import { Grid } from '@mui/material';
 import UpdateAddressDialog from '../features/Address/UpdateAddressDialog';
 import DeleteAddressDialog from '../features/Address/DeleteAddressDialog';
@@ -16,8 +15,6 @@ export default function BasicTable() {
   const [tableData, setTableData] = useState([]);
   const [openSnackbar, setOpenSnackbar] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
-  const [dialogOpen, setDialogOpen] = useState(false);
-  const [selectedRow, setSelectedRow] = useState(null);
 
   useEffect(() => {
     fetchTableData();
@@ -35,7 +32,7 @@ export default function BasicTable() {
     try {
       const response = await axios.get(url, config);
       let { data } = response.data;
-      data = data.sort((a, b) => a.id - b.id); //ordena pelo ID
+      data = data.sort((a, b) => a.id - b.id);
       setTableData(data);
       setLoading(false);
     } catch (err) {

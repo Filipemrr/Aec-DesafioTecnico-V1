@@ -1,19 +1,12 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Box from '@mui/joy/Box';
-import Button from '@mui/joy/Button';
 import Typography from '@mui/joy/Typography';
-import DownloadRoundedIcon from '@mui/icons-material/DownloadRounded';
-import AddCircleIcon from '@mui/icons-material/AddCircle';
+import GenerateCSV from '../features/Address/GenerateCSV';
 import '../index.css';
 import BasicTable from '../components/Table.js';
 import NewAddressDialog from '../features/Address/CreateAddressDialog';
 import { Grid } from '@mui/material';
 export default function Dashboard() {
-  const [loading, setLoading] = useState(true);
-  function Carregando(loading) {
-    setLoading(!loading)
-  }
-
   return (
     <Grid>
       <Box sx={{ display: 'flex', minHeight: '100dvh' }}>
@@ -29,14 +22,7 @@ export default function Dashboard() {
             </Typography>
             <Box>
               <NewAddressDialog/>
-              <Button
-                color="primary"
-                startDecorator={<DownloadRoundedIcon />}
-                size="sm"
-                sx={{margin: '10px'}}
-              >
-                Download CSV
-              </Button>
+              <GenerateCSV/>
             </Box>
           </Box>
           <Box

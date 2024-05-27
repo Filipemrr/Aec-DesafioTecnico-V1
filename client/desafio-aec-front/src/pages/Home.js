@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Grid, Typography, TextField, Button, useMediaQuery, Snackbar, Alert } from "@mui/material";
 import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
 import MailLockOutlinedIcon from '@mui/icons-material/MailLockOutlined';
 import LockOpenIcon from '@mui/icons-material/LockOpen';
 import CadastroDialog from '../features/Login/CadastroDialog';

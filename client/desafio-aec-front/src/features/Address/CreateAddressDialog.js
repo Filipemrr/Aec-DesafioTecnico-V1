@@ -4,7 +4,8 @@ import PersonIcon from '@mui/icons-material/Person';
 import SearchIcon from '@mui/icons-material/Search';
 import axios from 'axios';
 import { API_URL } from '../../App';
-
+import AddIcon from '@mui/icons-material/Add';
+import UploadIcon from '@mui/icons-material/Upload';
 const NewAddressDialog = () => {
   const [open, setOpen] = useState(false);
   const [formData, setFormData] = useState({
@@ -121,10 +122,16 @@ const NewAddressDialog = () => {
   return (
     <>
       <Button
-        color="success"
-        startDecorator={<PersonIcon />}
+        variant="contained"
+        startIcon={<AddIcon />}
         onClick={handleOpen}
-        sx={{ bgcolor: 'green', color: 'white', margin: '10px' }}
+        sx={{
+          bgcolor: '#5bda70',
+          margin: '10px',
+          '&:hover': {
+            bgcolor: '#50c864',
+          },
+        }}
       >
         Adicionar Endereço
       </Button>

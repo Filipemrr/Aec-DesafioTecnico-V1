@@ -5,13 +5,11 @@ import {
     DialogTitle,
     DialogContent,
     DialogActions,
-    Slide,
     TextField,
     Snackbar,
     Alert
 } from "@mui/material";
 import PersonIcon from '@mui/icons-material/Person';
-import CakeIcon from '@mui/icons-material/Cake';
 import EmailIcon from '@mui/icons-material/Email';
 import LockIcon from '@mui/icons-material/Lock';
 import axios from 'axios'
@@ -90,7 +88,7 @@ const CadastroDialog = () => {
         axios.post(url,data,headers)
           .then((response) =>{
             console.log(url, data, headers);
-              if (response.status == 200) {
+              if (response.status === 200) {
                   setConfirmationSnackbar(true);
                   console.log(response.data);
                   handleClose();
