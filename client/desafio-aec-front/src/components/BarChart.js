@@ -4,18 +4,18 @@ import { API_URL } from '../App';
 import axios from 'axios';
 import CircularProgress from '@mui/material/CircularProgress';
 import Box from '@mui/material/Box';
-import { ArcElement, Chart as ChartJS, Legend, Tooltip } from 'chart.js';
-import { Pie } from 'react-chartjs-2';
+import { ArcElement, Chart as ChartJS, CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend } from 'chart.js';
+import { Bar } from 'react-chartjs-2';
 import { Grid } from '@mui/material';
 
-ChartJS.register(Tooltip, Legend, ArcElement);
+ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend );
 
-function buildPieGraphic(labels, dataset) {
+function buildBarGraphic(labels, dataset) {
   return {
     labels,
     datasets: [
       {
-        label: 'Contagem de Endereços por UF',
+        label: 'Contagem de Cidades',
         data: dataset,
         backgroundColor: [
           'rgba(255, 99, 132, 0.6)',    // SP
@@ -47,7 +47,8 @@ function buildPieGraphic(labels, dataset) {
           'rgba(107, 142, 35, 0.6)',    // MS
           'rgba(176, 196, 222, 0.6)'    // RS
         ],
-        hoverOffset: 4,
+        borderColor: 'rgba(176, 196, 222, 0.6)',
+        borderWidth: 1,
       }
     ]
   };
@@ -64,7 +65,7 @@ const BuildGraphicLegend = ({ chartData }) => {
         borderRadius: '4px'
       }}
     >
-      <h3>Balanço das Cidades:</h3>
+      <h3>Estados(UF)</h3>
       {chartData.labels && chartData.labels.map((label, index) => (
         <Box key={index} display="flex" alignItems="center" mb={1}>
           <Box
@@ -83,7 +84,7 @@ const BuildGraphicLegend = ({ chartData }) => {
 }
 
 
-export default function PieChart() {
+export default function BarChart() {
   const [loading, setLoading] = useState(true);
   const [graphicData, setGraphicData] = useState({});
   const [openSnackbar, setOpenSnackbar] = useState(false);
@@ -107,13 +108,13 @@ export default function PieChart() {
     try {
       const response = await axios.get(url, config);
       let { data } = response.data;
-      const citiesCount = data.reduce((acc, { cidade }) => {
-        acc[cidade] = (acc[cidade] || 0) + 1;
+      const ufCounts = data.reduce((acc, { uf }) => {
+        acc[uf] = (acc[uf] || 0) + 1;
         return acc;
       }, {});
-      const labels = Object.keys(citiesCount);
-      const dataset = Object.values(citiesCount);
-      const chartData = buildPieGraphic(labels, dataset);
+      const labels = Object.keys(ufCounts);
+      const dataset = Object.values(ufCounts);
+      const chartData = buildBarGraphic(labels, dataset);
       setGraphicData(chartData);
       setLoading(false);
     } catch (err) {
@@ -134,7 +135,7 @@ export default function PieChart() {
   return (
     <Box display="flex" justifyContent="center" alignItems="center" >
       <Grid item md={7}>
-        <Pie options={options} data={graphicData} />
+        <Bar options={options} data={graphicData} />
       </Grid>
       <Grid item md={5} sx={{height: '100%', borderRadius: '4px'}}>
         <BuildGraphicLegend chartData={graphicData}/>

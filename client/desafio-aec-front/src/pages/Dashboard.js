@@ -7,6 +7,7 @@ import BasicTable from '../components/Table.js';
 import NewAddressDialog from '../features/Address/CreateAddressDialog';
 import { Grid } from '@mui/material';
 import PieChart from '../components/PieChart';
+import BarChart from '../components/BarChart';
 
 function Header()  {
   return (
@@ -33,9 +34,9 @@ function Table()  {
 
 function LeftDataRepresentation() {
   return (
-    <Grid item md={6}
+    <Grid item md={5.9}
           className='firstGrphic'
-          sx={{border: '1px solid #232e29', borderRadius: '4px', padding: '10px'}}
+          sx={{borderRadius: '4px', padding: '10px'}}
     >
       <PieChart/>
     </Grid>
@@ -44,11 +45,11 @@ function LeftDataRepresentation() {
 
 function RightDataRepresentation() {
   return (
-    <Grid item md={5.5}
+    <Grid item md={5.9}
           className='firstGrphic'
-          sx={{border: '1px solid red'}}
+          sx={{borderRadius: '4px', padding: '10px'}}
     >
-      <p>sdas</p>
+      <BarChart/>
     </Grid>
   )
 }
@@ -59,10 +60,10 @@ export default function Dashboard() {
         <Grid container
           component="main"
           className="MainContent"
+          sx={{marginBottomBottom: '100px'}}
         >
           <Header/>
           <Table/>
-
           <LeftDataRepresentation/>
           <RightDataRepresentation/>
         </Grid>
