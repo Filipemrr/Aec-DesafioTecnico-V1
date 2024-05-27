@@ -6,7 +6,7 @@ O desafio consistem em fazer um CRUD de gerência de endereços, Esse é um guia
           Documentacao da API    =   link
 
 # Telas e Funcionalidades👇🏻
-> Tela de Login.
+## Tela de Login.
 <p align="center">
   <img src="./client/desafio-aec-front/public/login.png" alt="Texto alternativo da imagem" width="600">
 </p>
@@ -14,7 +14,7 @@ O desafio consistem em fazer um CRUD de gerência de endereços, Esse é um guia
 ***
 <br>
 
-> Ao clicar em 'Se Cadastre:'
+## Ao clicar em 'Se Cadastre:'
 <p align="center">
   <img src="./client/desafio-aec-front/public/createAcount.png" alt="Texto alternativo da imagem" width="600">
 </p>
@@ -22,7 +22,7 @@ O desafio consistem em fazer um CRUD de gerência de endereços, Esse é um guia
 ***
 <br>
 
-> Dashboard Inicial
+## Dashboard Inicial
 <p align="center">
   <img src="./client/desafio-aec-front/public/Dashboard.png" alt="Texto alternativo da imagem" width="600">
 </p>
@@ -33,7 +33,7 @@ O desafio consistem em fazer um CRUD de gerência de endereços, Esse é um guia
 ***
 <br>
 
-> Ao clicar no botao verde 'Adicionar novo endereco'
+## Ao clicar no botao verde 'Adicionar novo endereco'
 <p align="center">
   <img src="./client/desafio-aec-front/public/novoEndereco.png" alt="Texto alternativo da imagem" width="600">
 </p>
@@ -44,7 +44,7 @@ O desafio consistem em fazer um CRUD de gerência de endereços, Esse é um guia
 ***
 <br>
 
-> Vizualizando Grafico de Setores - Cidades 
+## Vizualizando Grafico de Setores - Cidades 
 <p align="center">
   <img src="./client/desafio-aec-front/public/GraficoPie.png" alt="Texto alternativo da imagem" width="600">
 </p>
@@ -56,7 +56,7 @@ O desafio consistem em fazer um CRUD de gerência de endereços, Esse é um guia
 <br>
 
 
-> Vizualizando Grafico de Barras - Estados
+## Vizualizando Grafico de Barras - Estados
 <p align="center">
   <img src="./client/desafio-aec-front/public/GraficoBar.png" alt="Texto alternativo da imagem" width="600">
 </p>
