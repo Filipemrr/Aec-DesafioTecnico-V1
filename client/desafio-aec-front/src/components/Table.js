@@ -5,13 +5,11 @@ import { API_URL } from '../App';
 import axios from 'axios';
 import CircularProgress from '@mui/material/CircularProgress';
 import Box from '@mui/material/Box';
-import EditIcon from '@mui/icons-material/Edit';
-import IconButton from '@mui/material/IconButton';
 import Snackbar from '@mui/material/Snackbar';
-import Dialog from '@mui/material/Dialog';
-import DialogTitle from '@mui/material/DialogTitle';
-import DialogContent from '@mui/material/DialogContent';
-import UploadAddressDialog from '../features/Address/UploadAddressDialog';
+import UpdateAndDeleteDialog from '../features/Address/UpdateAddressDialog';
+import { Grid } from '@mui/material';
+import UpdateAddressDialog from '../features/Address/UpdateAddressDialog';
+import DeleteAddressDialog from '../features/Address/DeleteAddressDialog';
 
 export default function BasicTable() {
   const [loading, setLoading] = useState(true);
@@ -47,16 +45,6 @@ export default function BasicTable() {
     }
   };
 
-  const handleEditClick = (row) => {
-    setSelectedRow(row);
-    setDialogOpen(true);
-  };
-
-  const handleCloseDialog = () => {
-    setDialogOpen(false);
-    setSelectedRow(null);
-  };
-
   if (loading) {
     return (
       <Box display="flex" justifyContent="center" alignItems="center" minHeight="100vh">
@@ -83,8 +71,11 @@ export default function BasicTable() {
         {tableData.map((row) => (
           <tr key={row.id}>
             <td>
-              <UploadAddressDialog ActualRow={row} />
-              {row.cep}
+              <Grid sx={{display: 'flex', alignItems: 'center'}}>
+                <UpdateAddressDialog ActualRow={row} />
+                <DeleteAddressDialog ActualRow={row}  />
+                {row.cep}
+              </Grid>
             </td>
             <td>{row.logradouro}</td>
             <td>{row.complemento}</td>

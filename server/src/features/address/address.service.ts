@@ -58,7 +58,6 @@ export class AddressService {
     });
   }
   async updateAddress(userId: number, updateAddressInfo: UpdateAddressDTO): Promise<object> {
-    console.log(updateAddressInfo);
     const user: UserEntity = await this.userRepository.findOne({
       where: {
         id: userId,
