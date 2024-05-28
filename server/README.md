@@ -6,9 +6,9 @@ A arquitetura do backend foi baseada em duas arquiteturas comuns, Clean Architec
 A arquitetura base do projeto define os módulos como entidades não relacionadas, e todos os conteúdos e funcionalidades integradas estão na base/core
 
 <h4>Representacao Visual<h4/>
-<img src="./client/public/arquitetura.png" alt="Texto alternativo da imagem" width="600">
+<img src="../client/public/arquitetura.png" alt="Texto alternativo da imagem" width="600">
 <h4>Representacao Pratica<h4/>
-<img src="./client/public/pastas.png" alt="Texto alternativo da imagem" width="600">
+<img src="../client/public/pastas.png" alt="Texto alternativo da imagem" width="600">
 
 ### Core
 É a camada responsável por conter as dependências do projeto, middlewares, serviços compartilhados, utilitários…
