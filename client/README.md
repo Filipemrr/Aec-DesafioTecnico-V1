@@ -1,7 +1,7 @@
 # Telas e Funcionalidades👇🏻
 ## Tela de Login.
 <p align="center">
-  <img src="./client/desafio-aec-front/public/login.png" alt="Texto alternativo da imagem" width="600">
+  <img src="./client/public/login.png" alt="Texto alternativo da imagem" width="600">
 </p>
 
 ***
@@ -9,7 +9,7 @@
 
 ## Ao clicar em 'Se Cadastre:'
 <p align="center">
-  <img src="./client/desafio-aec-front/public/createAcount.png" alt="Texto alternativo da imagem" width="600">
+  <img src="./client/public/createAcount.png" alt="Texto alternativo da imagem" width="600">
 </p>
 
 ***
@@ -17,7 +17,7 @@
 
 ## Dashboard Inicial
 <p align="center">
-  <img src="./client/desafio-aec-front/public/Dashboard.png" alt="Texto alternativo da imagem" width="600">
+  <img src="./client/public/Dashboard.png" alt="Texto alternativo da imagem" width="600">
 </p>
 
     💡 Ao clicar no botão azul 'Gerar CSV', o usuário faz o download do
@@ -28,7 +28,7 @@
 
 ## Ao clicar no botão verde 'Adicionar novo endereço'
 <p align="center">
-  <img src="./client/desafio-aec-front/public/novoEndereco.png" alt="Texto alternativo da imagem" width="600">
+  <img src="./client/public/novoEndereco.png" alt="Texto alternativo da imagem" width="600">
 </p>
 
     💡 Digite um CEP válido e clique na lupa para preencher os campos 
@@ -39,7 +39,7 @@
 
 ## Visualizando Gráfico de Setores - Cidades
 <p align="center">
-  <img src="./client/desafio-aec-front/public/GraficoPie.png" alt="Texto alternativo da imagem" width="600">
+  <img src="./client/public/GraficoPie.png" alt="Texto alternativo da imagem" width="600">
 </p>
 
     💡 Nesse gráfico o usuário tem uma visualização simplificada das cidades
@@ -51,7 +51,7 @@
 
 ## Visualizando Gráfico de Barras - Estados
 <p align="center">
-  <img src="./client/desafio-aec-front/public/GraficoBar.png" alt="Texto alternativo da imagem" width="600">
+  <img src="./client/public/GraficoBar.png" alt="Texto alternativo da imagem" width="600">
 </p>
 
     💡 Nesse gráfico o usuário tem uma visualização simplificada dos estados
