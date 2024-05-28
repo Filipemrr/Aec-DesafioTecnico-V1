@@ -50,7 +50,7 @@ $ npm run start
 # Telas e Funcionalidades👇🏻
 ## Tela de Login.
 <p align="center">
-  <img src="./client/desafio-aec-front/public/login.png" alt="Texto alternativo da imagem" width="600">
+  <img src="./client/public/login.png" alt="Texto alternativo da imagem" width="600">
 </p>
 
 ***
@@ -58,7 +58,7 @@ $ npm run start
 
 ## Ao clicar em 'Se Cadastre:'
 <p align="center">
-  <img src="./client/desafio-aec-front/public/createAcount.png" alt="Texto alternativo da imagem" width="600">
+  <img src="./client/public/createAcount.png" alt="Texto alternativo da imagem" width="600">
 </p>
 
 ***
@@ -66,7 +66,7 @@ $ npm run start
 
 ## Dashboard Inicial
 <p align="center">
-  <img src="./client/desafio-aec-front/public/Dashboard.png" alt="Texto alternativo da imagem" width="600">
+  <img src="./client/public/Dashboard.png" alt="Texto alternativo da imagem" width="600">
 </p>
 
     💡 Ao clicar no botão azul 'Gerar CSV', o usuário faz o download do
@@ -77,7 +77,7 @@ $ npm run start
 
 ## Ao clicar no botão verde 'Adicionar novo endereço'
 <p align="center">
-  <img src="./client/desafio-aec-front/public/novoEndereco.png" alt="Texto alternativo da imagem" width="600">
+  <img src="./client/public/novoEndereco.png" alt="Texto alternativo da imagem" width="600">
 </p>
 
     💡 Digite um CEP válido e clique na lupa para preencher os campos 
@@ -88,7 +88,7 @@ $ npm run start
 
 ## Visualizando Gráfico de Setores - Cidades
 <p align="center">
-  <img src="./client/desafio-aec-front/public/GraficoPie.png" alt="Texto alternativo da imagem" width="600">
+  <img src="./client/public/GraficoPie.png" alt="Texto alternativo da imagem" width="600">
 </p>
 
     💡 Nesse gráfico o usuário tem uma visualização simplificada das cidades
@@ -100,7 +100,7 @@ $ npm run start
 
 ## Visualizando Gráfico de Barras - Estados
 <p align="center">
-  <img src="./client/desafio-aec-front/public/GraficoBar.png" alt="Texto alternativo da imagem" width="600">
+  <img src="./client/public/GraficoBar.png" alt="Texto alternativo da imagem" width="600">
 </p>
 
     💡 Nesse gráfico o usuário tem uma visualização simplificada dos estados
@@ -115,9 +115,9 @@ A arquitetura do backend foi baseada em duas arquiteturas comuns, Clean Architec
 A arquitetura base do projeto define os módulos como entidades não relacionadas, e todos os conteúdos e funcionalidades integradas estão na base/core
 
 <h4>Representacao Visual<h4/>
-<img src="./client/desafio-aec-front/public/arquitetura.png" alt="Texto alternativo da imagem" width="600">
+<img src="./client/public/arquitetura.png" alt="Texto alternativo da imagem" width="600">
 <h4>Representacao Pratica<h4/>
-<img src="./client/desafio-aec-front/public/pastas.png" alt="Texto alternativo da imagem" width="600">
+<img src="./client/public/pastas.png" alt="Texto alternativo da imagem" width="600">
 
 ### Core
 É a camada responsável por conter as dependências do projeto, middlewares, serviços compartilhados, utilitários…
