@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="ef5c4201-7ad4-4003-9736-2bc6f2f6dbcd" name="Changes" comment="CHORE: Limpando algumas pastas">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,7 +21,6 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -89,7 +87,7 @@
       <workItem from="1716667140881" duration="722000" />
       <workItem from="1716672767305" duration="16888000" />
       <workItem from="1716751080502" duration="52590000" />
-      <workItem from="1716867183502" duration="3194000" />
+      <workItem from="1716867183502" duration="4493000" />
     </task>
     <task id="LOCAL-00001" summary="CHORE: Design da pagina de Login Completo">
       <option name="closed" value="true" />
@@ -251,7 +249,15 @@
       <option name="project" value="LOCAL" />
       <updated>1716916113631</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="CHORE: Limpando algumas pastas">
+      <option name="closed" value="true" />
+      <created>1716918022818</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1716918022818</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
