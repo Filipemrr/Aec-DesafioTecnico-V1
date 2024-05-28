@@ -14,11 +14,9 @@ $ npm install
 ## Rodando o Backend
 
 ```bash
-# development
+$ cd server
+$ npm i 
 $ npm run start
-
-# watch mode
-$ npm run start:dev
 
 # popular Banco de Dados com usuarios(opcional)
 $ npm run populatewUsers
@@ -43,6 +41,8 @@ JWT_TOKEN(opcional)=
 ## Rodando o Frontend
 
 ```bash
+$ cd client
+$ npm i 
 $ npm run start
 ```
          
