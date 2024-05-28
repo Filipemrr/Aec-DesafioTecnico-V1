@@ -1,10 +1,10 @@
-# Desafio AeC
+# Desafio AeC Backend - Documentação completa do Projeto - por Filipe Raposo
 O desafio consiste em fazer um CRUD de gerência de endereços. Este é um guia prático sobre a aplicação.
--  Primeira parte: Telas e funcionalidades.
--  Segunda parte: Especificações técnicas do Backend.
-   Project with focus in digitalizy all LAComp process
+  1. Guia para Instalar e Rodar o projeto localmente
+  2. Telas e Funcionalidades
+  3. Backend e Arquitetura 
 
-           Documentação da API    =   link
+  [Visite a Documentacao dos Endpoints](https://aecdesafio.apidocumentation.com)
 ## Instalação
 
 ```bash
@@ -110,11 +110,9 @@ $ npm run start
 # Arquitetura do Backend e Conceitos Técnicos👇🏻
 
 ## Arquitetura
-A arquitetura do backend foi baseada em duas arquiteturas comuns, Clean Architecture e Modules Architecture. Esse combinacao
-eh usada em projetos mais robustos, engloba todas as propriedades importantes de uma arquitetura MVC por exemplo, mas 
-resolve alguns probelemas da Model-View-Controller.
+A arquitetura do backend foi baseada em duas arquiteturas comuns, Clean Architecture e Modules Architecture. Essa combinação é usada em projetos mais robustos, engloba todas as propriedades importantes de uma arquitetura MVC, por exemplo, mas resolve alguns problemas da Model-View-Controller.
 
-A arquitetura base do projeto define os módulos como entidades não relacionadas, e todos os conteúdos e funcionalidades integradas estão na base/core.
+A arquitetura base do projeto define os módulos como entidades não relacionadas, e todos os conteúdos e funcionalidades integradas estão na base/core
 
 <h4>Representacao Visual<h4/>
 <img src="./client/desafio-aec-front/public/arquitetura.png" alt="Texto alternativo da imagem" width="600">
@@ -149,7 +147,7 @@ A arquitetura base do projeto define os módulos como entidades não relacionada
       middlewares, alem de que toda rota protegida deve passar por ele 
       para autenticar o usuario.
 
-### Features
+### Features(modules)
 É a camada responsável por conter os modulos, cada modulo contem um controller, um
 service e um modulo.
 
