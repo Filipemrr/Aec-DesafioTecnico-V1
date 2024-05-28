@@ -1,70 +1,59 @@
-# Getting Started with Create React App
+# Telas e Funcionalidades👇🏻
+## Tela de Login.
+<p align="center">
+  <img src="./client/desafio-aec-front/public/login.png" alt="Texto alternativo da imagem" width="600">
+</p>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+***
+<br>
 
-## Available Scripts
+## Ao clicar em 'Se Cadastre:'
+<p align="center">
+  <img src="./client/desafio-aec-front/public/createAcount.png" alt="Texto alternativo da imagem" width="600">
+</p>
 
-In the project directory, you can run:
+***
+<br>
 
-### `npm start`
+## Dashboard Inicial
+<p align="center">
+  <img src="./client/desafio-aec-front/public/Dashboard.png" alt="Texto alternativo da imagem" width="600">
+</p>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+    💡 Ao clicar no botão azul 'Gerar CSV', o usuário faz o download do
+    arquivo em formato .csv referente à tabela de endereços cadastrados.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+***
+<br>
 
-### `npm test`
+## Ao clicar no botão verde 'Adicionar novo endereço'
+<p align="center">
+  <img src="./client/desafio-aec-front/public/novoEndereco.png" alt="Texto alternativo da imagem" width="600">
+</p>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+    💡 Digite um CEP válido e clique na lupa para preencher os campos 
+    automaticamente usando a API https://viacep.com.br/
 
-### `npm run build`
+***
+<br>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Visualizando Gráfico de Setores - Cidades
+<p align="center">
+  <img src="./client/desafio-aec-front/public/GraficoPie.png" alt="Texto alternativo da imagem" width="600">
+</p>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+    💡 Nesse gráfico o usuário tem uma visualização simplificada das cidades
+    mais frequentes na tabela. 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+***
+<br>
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Visualizando Gráfico de Barras - Estados
+<p align="center">
+  <img src="./client/desafio-aec-front/public/GraficoBar.png" alt="Texto alternativo da imagem" width="600">
+</p>
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+    💡 Nesse gráfico o usuário tem uma visualização simplificada dos estados
+    mais frequentes na tabela. 
+<br>
