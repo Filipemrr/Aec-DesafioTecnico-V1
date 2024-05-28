@@ -147,7 +147,7 @@ A arquitetura base do projeto define os módulos como entidades não relacionada
       middlewares, alem de que toda rota protegida deve passar por ele 
       para autenticar o usuario.
 
-### Features
+### Features(modules)
 É a camada responsável por conter os modulos, cada modulo contem um controller, um
 service e um modulo.
 
