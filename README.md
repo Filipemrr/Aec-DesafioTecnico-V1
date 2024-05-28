@@ -24,13 +24,12 @@ $ npm run populatewAddresses
 Para rodar o Server localmente voce precisa adicionar um arquivo .ENV com esses
 atributos:
 ```env
-JWT_SECRET=
-HOSTNAME=
-DB_USER=
-DB_PASSWORD=
-DB_NAME=
-PORT=
-JWT_TOKEN(opcional)=
+JWT_SECRET= SEU SEGREDO JWT
+DB_HOST='127.0.0.1'
+DB_USER=postgres
+DB_PASSWORD= SUA SENHA 
+DB_NAME= NOME DO SEU BANCO
+PORT=5432
 ```
 ## Rodando o Frontend
 
