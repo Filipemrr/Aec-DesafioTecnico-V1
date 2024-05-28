@@ -43,7 +43,7 @@ $ npm run start
 # Telas e Funcionalidades👇🏻
 ## Tela de Login.
 <p align="center">
-  <img src="./client/public/login.png" alt="Texto alternativo da imagem" width="1000" height="600">
+  <img src="./client/public/login.png" alt="Texto alternativo da imagem" width="700" height="500">
 </p>
 
 ***
@@ -59,7 +59,7 @@ $ npm run start
 
 ## Dashboard Inicial
 <p align="center">
-  <img src="./client/public/Dashboard.png" alt="Texto alternativo da imagem" width="1000" height="600">
+  <img src="./client/public/Dashboard.png" alt="Texto alternativo da imagem" width="800" height="600">
 </p>
 
     💡 Ao clicar no botão azul 'Gerar CSV', o usuário faz o download do
