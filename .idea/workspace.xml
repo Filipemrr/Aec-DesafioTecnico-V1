@@ -6,7 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="ef5c4201-7ad4-4003-9736-2bc6f2f6dbcd" name="Changes" comment="CHORE: Limpando algumas pastas">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/core/data/database.providers.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/core/data/database.providers.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,7 +89,7 @@
       <workItem from="1716667140881" duration="722000" />
       <workItem from="1716672767305" duration="16888000" />
       <workItem from="1716751080502" duration="52590000" />
-      <workItem from="1716867183502" duration="1674000" />
+      <workItem from="1716867183502" duration="3194000" />
     </task>
     <task id="LOCAL-00001" summary="CHORE: Design da pagina de Login Completo">
       <option name="closed" value="true" />
@@ -243,7 +243,15 @@
       <option name="project" value="LOCAL" />
       <updated>1716915569447</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="CHORE: Limpando algumas pastas">
+      <option name="closed" value="true" />
+      <created>1716916113631</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1716916113631</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
