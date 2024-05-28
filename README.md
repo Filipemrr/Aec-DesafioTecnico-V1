@@ -110,11 +110,9 @@ $ npm run start
 # Arquitetura do Backend e Conceitos Técnicos👇🏻
 
 ## Arquitetura
-A arquitetura do backend foi baseada em duas arquiteturas comuns, Clean Architecture e Modules Architecture. Esse combinacao
-eh usada em projetos mais robustos, engloba todas as propriedades importantes de uma arquitetura MVC por exemplo, mas 
-resolve alguns probelemas da Model-View-Controller.
+A arquitetura do backend foi baseada em duas arquiteturas comuns, Clean Architecture e Modules Architecture. Essa combinação é usada em projetos mais robustos, engloba todas as propriedades importantes de uma arquitetura MVC, por exemplo, mas resolve alguns problemas da Model-View-Controller.
 
-A arquitetura base do projeto define os módulos como entidades não relacionadas, e todos os conteúdos e funcionalidades integradas estão na base/core.
+A arquitetura base do projeto define os módulos como entidades não relacionadas, e todos os conteúdos e funcionalidades integradas estão na base/core
 
 <h4>Representacao Visual<h4/>
 <img src="./client/desafio-aec-front/public/arquitetura.png" alt="Texto alternativo da imagem" width="600">
