@@ -5,12 +5,6 @@ O desafio consiste em fazer um CRUD de gerência de endereços. Este é um guia 
   3. Backend e Arquitetura 
 
   [Visite a Documentacao dos Endpoints](https://aecdesafio.apidocumentation.com)
-## Instalação
-
-```bash
-$ npm install
-```
-
 ## Rodando o Backend
 
 ```bash
