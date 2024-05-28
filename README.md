@@ -31,6 +31,38 @@ DB_PASSWORD= SUA SENHA
 DB_NAME= NOME DO SEU BANCO
 PORT=5432
 ```
+Para registrar as tabelas no banco, coloque 'synchronize: true', set synchronize para false novamente apos registrar as tabelas no banco: <br>
+📂 Core  <br>
+&nbsp;&nbsp;&nbsp;&nbsp;📂Data <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://emoji.gg/emoji/8584-typescript"><img src="https://cdn3.emoji.gg/emojis/8584-typescript.png" width="12px" height="12px" alt="TypeScript"></a> data.providers.ts<br>
+
+```
+import { DataSource } from 'typeorm';
+import * as process from 'process';
+import * as dotenv from 'dotenv';
+
+dotenv.config();
+export const databaseProviders = [
+  {
+    provide: 'DATA_SOURCE',
+    useFactory: async () => {
+      const dataSource = new DataSource({
+        type: 'postgres',
+        port: 5432,
+        host: process.env.DB_HOST,
+        username: process.env.DB_USER,
+        password: process.env.DB_PASSWORD,
+        database: process.env.DB_NAME,
+        entities: [__dirname + '/../**/*.entity{.ts,.js}'],
+        synchronize: false, ## TROQUE POR 'TRUE' APENAS NA PRIMEIRA VEZ QUE RODAR O SERVIDOR
+      });
+      return dataSource.initialize();
+    },
+  },
+];
+
+```
+
 ## Rodando o Frontend
 
 ```bash
