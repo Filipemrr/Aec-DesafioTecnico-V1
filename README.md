@@ -2,10 +2,11 @@
 O desafio consiste em fazer um CRUD de gerência de endereços. Este é um guia prático sobre a aplicação.
   1. Guia para Instalar e Rodar o projeto localmente
   2. Telas e Funcionalidades
-  3. Backend e Arquitetura 
+  3. Backend e Arquitetura
+
 
   [Visite a Documentacao dos Endpoints](https://aecdesafio.apidocumentation.com)
-  [Como rodar e demostrando o projeto]((https://youtu.be/6BtPyS0E5s4))
+  [Como rodar e demostrando o projeto](https://youtu.be/6BtPyS0E5s4)
 ## Rodando o Backend
 
 ```bash
