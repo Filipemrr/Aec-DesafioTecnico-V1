@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="ef5c4201-7ad4-4003-9736-2bc6f2f6dbcd" name="Changes" comment="CHORE: Limpando algumas pastas" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
+  <component name="ProjectId" id="2gyQ3HwoLEirEHTB831WMm4UfYb" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "/Users/filiperaposo/WebstormProjects/Aec-DesafioTecnico-V1/client/desafio-aec-front/src/features",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "npm.populatewAddresses.executor": "Run",
+    "ts.external.directory.path": "/Users/filiperaposo/WebstormProjects/Aec-DesafioTecnico-V1/server/node_modules/typescript/lib",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/client/desafio-aec-front/src/features" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/client" />
+      <recent name="$PROJECT_DIR$/client/desafio-aec-front/public" />
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="populatewAddresses" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/server/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="populatewAddresses" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.populatewAddresses" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ef5c4201-7ad4-4003-9736-2bc6f2f6dbcd" name="Changes" comment="" />
+      <created>1716667137061</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1716667137061</updated>
+      <workItem from="1716667140881" duration="722000" />
+      <workItem from="1716672767305" duration="16888000" />
+      <workItem from="1716751080502" duration="52590000" />
+      <workItem from="1716867183502" duration="1159000" />
+    </task>
+    <task id="LOCAL-00001" summary="CHORE: Design da pagina de Login Completo">
+      <option name="closed" value="true" />
+      <created>1716673403228</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1716673403228</updated>
+    </task>
+    <task id="LOCAL-00002" summary="CHORE: Logica do sistema de cadastro + Logica do sistema de Login">
+      <option name="closed" value="true" />
+      <created>1716687277083</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1716687277083</updated>
+    </task>
+    <task id="LOCAL-00003" summary="CHORE: Adicionando tabela">
+      <option name="closed" value="true" />
+      <created>1716693138918</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1716693138918</updated>
+    </task>
+    <task id="LOCAL-00004" summary="CHORE: Vizualizacao geral dos Enderecos na Tabela">
+      <option name="closed" value="true" />
+      <created>1716696295690</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1716696295690</updated>
+    </task>
+    <task id="LOCAL-00005" summary="CHORE: Implementando Dialog para novo endereco">
+      <option name="closed" value="true" />
+      <created>1716701063205</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1716701063205</updated>
+    </task>
+    <task id="LOCAL-00006" summary="CHORE: Frontend - Buscar e Cadastrar novo endereco">
+      <option name="closed" value="true" />
+      <created>1716754862112</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1716754862112</updated>
+    </task>
+    <task id="LOCAL-00007" summary="CHORE: Frontend - Alterar Enderecos">
+      <option name="closed" value="true" />
+      <created>1716769814951</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1716769814951</updated>
+    </task>
+    <task id="LOCAL-00008" summary="CHORE: Frontend - CRUD completo Integrado">
+      <option name="closed" value="true" />
+      <created>1716778356143</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1716778356143</updated>
+    </task>
+    <task id="LOCAL-00009" summary="CHORE: Conversao para CSV">
+      <option name="closed" value="true" />
+      <created>1716784520743</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1716784520743</updated>
+    </task>
+    <task id="LOCAL-00010" summary="FIX-BUG: Conversao para CSV">
+      <option name="closed" value="true" />
+      <created>1716827173187</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1716827173187</updated>
+    </task>
+    <task id="LOCAL-00011" summary="EXTRA-FEATURE: Adicionando grafico para vizualizacao dos dados">
+      <option name="closed" value="true" />
+      <created>1716839234759</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1716839234760</updated>
+    </task>
+    <task id="LOCAL-00012" summary="EXTRA-FEATURE: Adicionando grafico de Barra para vizualizacao dos dados">
+      <option name="closed" value="true" />
+      <created>1716841169690</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1716841169691</updated>
+    </task>
+    <task id="LOCAL-00013" summary="README: Atualizando README.md">
+      <option name="closed" value="true" />
+      <created>1716844842690</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1716844842690</updated>
+    </task>
+    <task id="LOCAL-00014" summary="README: Atualizando README.md">
+      <option name="closed" value="true" />
+      <created>1716845185400</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1716845185400</updated>
+    </task>
+    <task id="LOCAL-00015" summary="README: Documentacao do Projeto&#10; README.md">
+      <option name="closed" value="true" />
+      <created>1716855995374</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1716855995374</updated>
+    </task>
+    <task id="LOCAL-00016" summary="README: Documentacao do Projeto&#10; README.md">
+      <option name="closed" value="true" />
+      <created>1716865815799</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1716865815799</updated>
+    </task>
+    <task id="LOCAL-00017" summary="CHORE: Limpando algumas pastas">
+      <option name="closed" value="true" />
+      <created>1716866318349</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1716866318349</updated>
+    </task>
+    <task id="LOCAL-00018" summary="CHORE: Limpando algumas pastas">
+      <option name="closed" value="true" />
+      <created>1716866948930</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1716866948930</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="CHORE: Design da pagina de Login Completo" />
+    <MESSAGE value="CHORE: Logica do sistema de cadastro + Logica do sistema de Login" />
+    <MESSAGE value="CHORE: Adicionando tabela" />
+    <MESSAGE value="CHORE: Vizualizacao geral dos Enderecos na Tabela" />
+    <MESSAGE value="CHORE: Implementando Dialog para novo endereco" />
+    <MESSAGE value="CHORE: Frontend - Buscar e Cadastrar novo endereco" />
+    <MESSAGE value="CHORE: Frontend - Alterar Enderecos" />
+    <MESSAGE value="CHORE: Frontend - CRUD completo Integrado" />
+    <MESSAGE value="CHORE: Conversao para CSV" />
+    <MESSAGE value="FIX-BUG: Conversao para CSV" />
+    <MESSAGE value="EXTRA-FEATURE: Adicionando grafico para vizualizacao dos dados" />
+    <MESSAGE value="EXTRA-FEATURE: Adicionando grafico de Barra para vizualizacao dos dados" />
+    <MESSAGE value="README: Atualizando README.md" />
+    <MESSAGE value="README: Documentacao do Projeto&#10; README.md" />
+    <MESSAGE value="CHORE: Limpando algumas pastas" />
+    <option name="LAST_COMMIT_MESSAGE" value="CHORE: Limpando algumas pastas" />
+  </component>
+</project>

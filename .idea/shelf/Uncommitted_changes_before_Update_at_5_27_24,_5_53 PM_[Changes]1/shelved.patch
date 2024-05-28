@@ -1,0 +1,45 @@
+Index: client/desafio-aec-front/src/pages/Dashboard.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import React from 'react';\nimport Box from '@mui/joy/Box';\nimport Typography from '@mui/joy/Typography';\nimport GenerateCSV from '../features/Address/GenerateCSV';\nimport '../index.css';\nimport BasicTable from '../components/Table.js';\nimport NewAddressDialog from '../features/Address/CreateAddressDialog';\nimport { Grid } from '@mui/material';\nimport PieChart from '../components/PieChart';\nimport BarChart from '../components/BarChart';\n\nfunction Header()  {\n  return (\n    <Grid item>\n    <Typography level=\"h2\" component=\"h1\">\n      Endereço\n    </Typography>\n  <Box>\n    <NewAddressDialog/>\n    <GenerateCSV/>\n  </Box>\n    </Grid>\n  )\n}\nfunction Table()  {\n  return (\n    <Grid item\n          className='TableContent'\n    >\n      <BasicTable/>\n    </Grid>\n  )\n}\n\nfunction LeftDataRepresentation() {\n  return (\n    <Grid item md={5.9}\n          className='firstGrphic'\n          sx={{borderRadius: '4px', padding: '10px'}}\n    >\n      <PieChart/>\n    </Grid>\n  )\n}\n\nfunction RightDataRepresentation() {\n  return (\n    <Grid item md={5.9}\n          className='firstGrphic'\n          sx={{borderRadius: '4px', padding: '10px'}}\n    >\n      <BarChart/>\n    </Grid>\n  )\n}\nexport default function Dashboard() {\n  return (\n    <Grid>\n      <Grid container sx={{ display: 'flex', minHeight: '100dvh' }}>\n        <Grid container\n          component=\"main\"\n          className=\"MainContent\"\n          sx={{marginBottomBottom: '100px'}}\n        >\n          <Header/>\n          <Table/>\n          <LeftDataRepresentation/>\n          <RightDataRepresentation/>\n        </Grid>\n      </Grid>\n    </Grid>\n  );\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/client/desafio-aec-front/src/pages/Dashboard.js b/client/desafio-aec-front/src/pages/Dashboard.js
+--- a/client/desafio-aec-front/src/pages/Dashboard.js	
++++ b/client/desafio-aec-front/src/pages/Dashboard.js	
+@@ -31,7 +31,6 @@
+     </Grid>
+   )
+ }
+-
+ function LeftDataRepresentation() {
+   return (
+     <Grid item md={5.9}
+@@ -42,7 +41,6 @@
+     </Grid>
+   )
+ }
+-
+ function RightDataRepresentation() {
+   return (
+     <Grid item md={5.9}
+Index: client/desafio-aec-front/src/components/BarChart.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import * as React from 'react';\nimport { useEffect, useState } from 'react';\nimport { API_URL } from '../App';\nimport axios from 'axios';\nimport CircularProgress from '@mui/material/CircularProgress';\nimport Box from '@mui/material/Box';\nimport { ArcElement, Chart as ChartJS, CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend } from 'chart.js';\nimport { Bar } from 'react-chartjs-2';\nimport { Grid } from '@mui/material';\n\nChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend );\n\nfunction buildBarGraphic(labels, dataset) {\n  return {\n    labels,\n    datasets: [\n      {\n        label: 'Contagem de Cidades',\n        data: dataset,\n        backgroundColor: [\n          'rgba(255, 99, 132, 0.6)',    // SP\n          'rgba(54, 162, 235, 0.6)',    // RJ\n          'rgba(255, 206, 86, 0.6)',    // MG\n          'rgba(75, 192, 192, 0.6)',    // PR\n          'rgba(153, 102, 255, 0.6)',   // RS\n          'rgba(255, 159, 64, 0.6)',    // BA\n          'rgba(255, 105, 180, 0.6)',   // PE\n          'rgba(100, 149, 237, 0.6)',   // CE\n          'rgba(255, 228, 196, 0.6)',   // GO\n          'rgba(139, 69, 19, 0.6)',     // DF\n          'rgba(60, 179, 113, 0.6)',    // SC\n          'rgba(218, 165, 32, 0.6)',    // ES\n          'rgba(255, 182, 193, 0.6)',   // PB\n          'rgba(32, 178, 170, 0.6)',    // RN\n          'rgba(255, 69, 0, 0.6)',      // AL\n          'rgba(199, 21, 133, 0.6)',    // SE\n          'rgba(173, 216, 230, 0.6)',   // PI\n          'rgba(50, 205, 50, 0.6)',     // MA\n          'rgba(139, 0, 0, 0.6)',       // AM\n          'rgba(75, 0, 130, 0.6)',      // PA\n          'rgba(240, 230, 140, 0.6)',   // AP\n          'rgba(210, 105, 30, 0.6)',    // TO\n          'rgba(123, 104, 238, 0.6)',   // RO\n          'rgba(255, 215, 0, 0.6)',     // AC\n          'rgba(0, 191, 255, 0.6)',     // RR\n          'rgba(70, 130, 180, 0.6)',    // MT\n          'rgba(107, 142, 35, 0.6)',    // MS\n          'rgba(176, 196, 222, 0.6)'    // RS\n        ],\n        borderColor: 'rgba(176, 196, 222, 0.6)',\n        borderWidth: 1,\n      }\n    ]\n  };\n}\nconst BuildGraphicLegend = ({ chartData }) => {\n  return (\n    <Grid\n      item\n      sx={{\n        maxHeight: '300px',\n        overflowY: 'auto',\n        padding: '10px',\n        border: '1px solid #ccc',\n        borderRadius: '4px'\n      }}\n    >\n      <h3>Estados(UF)</h3>\n      {chartData.labels && chartData.labels.map((label, index) => (\n        <Box key={index} display=\"flex\" alignItems=\"center\" mb={1}>\n          <Box\n            sx={{\n              width: 16,\n              height: 16,\n              backgroundColor: chartData.datasets[0].backgroundColor[index],\n              marginRight: 1\n            }}\n          />\n          <p>{label}: {chartData.datasets[0].data[index]}</p>\n        </Box>\n      ))}\n    </Grid>\n  );\n}\n\n\nexport default function BarChart() {\n  const [loading, setLoading] = useState(true);\n  const [graphicData, setGraphicData] = useState({});\n  const [openSnackbar, setOpenSnackbar] = useState(false);\n  const [errorMessage, setErrorMessage] = useState('');\n\n  const options = {}\n\n  useEffect(() => {\n    fetchAddressData();\n  }, []);\n\n  const fetchAddressData = async () => {\n    const token = localStorage.getItem('token');\n    const url = `${API_URL}/address/buscarEnderecos`;\n    const config = {\n      headers: {\n        'Content-Type': 'application/json',\n        'Authorization': `Bearer ${token}`\n      }\n    };\n    try {\n      const response = await axios.get(url, config);\n      let { data } = response.data;\n      const ufCounts = data.reduce((acc, { uf }) => {\n        acc[uf] = (acc[uf] || 0) + 1;\n        return acc;\n      }, {});\n      const labels = Object.keys(ufCounts);\n      const dataset = Object.values(ufCounts);\n      const chartData = buildBarGraphic(labels, dataset);\n      setGraphicData(chartData);\n      setLoading(false);\n    } catch (err) {\n      setErrorMessage('Erro ao buscar dados da tabela');\n      setOpenSnackbar(true);\n      setLoading(false);\n    }\n  };\n\n  if (loading) {\n    return (\n      <Box display=\"flex\" justifyContent=\"center\" alignItems=\"center\" minHeight=\"100vh\">\n        <CircularProgress />\n      </Box>\n    );\n  }\n\n  return (\n    <Box display=\"flex\" justifyContent=\"center\" alignItems=\"center\" >\n      <Grid item md={7}>\n        <Bar options={options} data={graphicData} />\n      </Grid>\n      <Grid item md={5} sx={{height: '100%', borderRadius: '4px'}}>\n        <BuildGraphicLegend chartData={graphicData}/>\n      </Grid>\n    </Box>\n  );\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/client/desafio-aec-front/src/components/BarChart.js b/client/desafio-aec-front/src/components/BarChart.js
+--- a/client/desafio-aec-front/src/components/BarChart.js	
++++ b/client/desafio-aec-front/src/components/BarChart.js	
+@@ -15,7 +15,7 @@
+     labels,
+     datasets: [
+       {
+-        label: 'Contagem de Cidades',
++        label: 'Contagem dos Estados',
+         data: dataset,
+         backgroundColor: [
+           'rgba(255, 99, 132, 0.6)',    // SP
