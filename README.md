@@ -1,8 +1,8 @@
 # Desafio AeC
 O desafio consiste em fazer um CRUD de gerência de endereços. Este é um guia prático sobre a aplicação.
--  Primeira parte: Telas e funcionalidades.
--  Segunda parte: Especificações técnicas do Backend.
-   Project with focus in digitalizy all LAComp process
+  1. Guia para Instalar e Rodar o projeto localmente
+  2. Telas e Funcionalidades
+  3. Backend e Arquitetura 
 
            Documentação da API    =   link
 ## Instalação
